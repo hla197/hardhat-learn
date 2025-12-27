@@ -8,7 +8,7 @@
 结束拍卖：拍卖结束后，NFT 转移给出价最高者，资金转移给卖家。
 
 ## 项目结构
-
+```
 hardhat-learn/
 ├── contracts/           # 智能合约源代码
 │   ├── NftAuction.sol # NFT拍卖合约 (支持ERC20和以太坊出价)
@@ -20,7 +20,7 @@ hardhat-learn/
 ├── hardhat.config.js   # Hardhat 配置文件
 ├── package.json        # 项目依赖配置
 └── README.md          # 项目说明文档
-
+```
 
 ### 合约功能概述
 #### NftAuction.sol：核心拍卖合约
