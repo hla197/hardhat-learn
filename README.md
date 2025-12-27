@@ -2,6 +2,7 @@
 
 
 ## 项目描述
+
 实现一个拍卖合约，支持以下功能：
 
 创建拍卖：允许用户将 NFT 上架拍卖。
@@ -13,27 +14,34 @@
 ## 项目结构
 ```
 hardhat-learn/
-├── contracts/           # 智能合约源代码
-│   ├── NftAuction.sol # NFT拍卖合约 (支持ERC20和以太坊出价)
-│   └── NftAuctionV2.sol # NFT拍卖合约V2 (升级版本)
-├── test/               # 合约测试文件
-├── ignition/           # Hardhat Ignition部署模块
-├── scripts/            # 自定义脚本
-├── deployments/        # 部署地址记录
-├── hardhat.config.js   # Hardhat 配置文件
-├── package.json        # 项目依赖配置
-└── README.md          # 项目说明文档
+├── contracts/                           # 智能合约源代码
+│   ├── mock/                           # 模拟合约（ERC20、NFT、预言机）
+│   │   ├── MyErc20.sol                 # 模拟ERC20代币
+│   │   ├── MyNft.sol                   # 模拟NFT
+│   │   └── MockAggregatorV3.sol        # 预言机模拟
+│   ├── NftAuction.sol                  # NFT拍卖合约 (支持ERC20和以太坊出价)
+│   └── NftAuctionV2.sol                # NFT拍卖合约V2 (升级版本)
+├── test/                               # 合约测试文件
+├── deployments/                        # 部署地址记录
+├── hardhat.config.js                   # Hardhat 配置文件
+├── package.json                        # 项目依赖配置
+└── README.md                           # 项目说明文档
 ```
 
 ### 合约功能概述
+
 #### NftAuction.sol：核心拍卖合约
 
 支持创建拍卖（将NFT上架）
-支持以ERC20代币或以太坊出价
-拍卖结束时自动转移NFT给出价最高者
-资金自动转移给卖家
+
+支持以ERC20代币或以太坊出价 
+
+拍卖结束时自动转移NFT给出价最高者 
+
+资金自动转移给卖家 
 
 #### NftAuctionV2.sol：合约的升级版本
+
 在V1基础上添加了平台手续费
 
 ### 1. 安装依赖
@@ -51,13 +59,13 @@ npx hardhat compile
 ### 3. 运行测试
 
 ```bash
-npx hardhat test
+npx hardhat test test/NftAuction.js
 ```
 
 ### 4. 启动本地节点
 
 ```bash
-npx hardhat node
+npx hardhat node --no-deploy
 ```
 
 ### 5. 部署合约
